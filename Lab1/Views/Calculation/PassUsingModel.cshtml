@@ -1,0 +1,12 @@
+﻿@model Backend1.Models.CalculationViewModel
+@{
+    ViewBag.Title = "Pass using Model";
+}
+
+<h2>Calculation via ViewBag</h2>
+<ul>
+    <li>@Model.A + @Model.B = <b>@Model.Add</b></li>
+    <li>@Model.A - @Model.B = <b>@Model.Sub</b></li>
+    <li>@Model.A * @Model.B = <b>@Model.Mul</b></li>
+    <li>@Model.A / @Model.B = <b>@Model.Div</b></li>
+</ul>

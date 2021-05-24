@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Backend6.Models.ForumCategory>
+@{
+    ViewBag.Title = "Forum";
+}
+
+<h2>Forum</h2>
+
+@foreach (var category in Model)
+{
+    <div class="panel panel-default forum-category">
+        <div class="panel-heading">
+            <strong>@category.Name"</strong>
+            | <a asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+            | <a asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+            | <a asp-controller="Forums" asp-action="Create" asp-route-categoryId="@category.Id">Create forum</a>
+        </div>
+        <table class="table table-striped">
+            <tbody>
+            @foreach (var forum in category.Forums)
+            {
+                <tr>
+                    <td>
+                        <a href="#" class="forum-name">@forum.Name</a>
+                        | <a href="#">Edit</a>
+                        | <a href="#">Delete</a>
+                        <p>@forum.Description</p>
+                    </td>
+                    <td style="width: 150px">5 topics</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <a asp-action="Create">Create new category</a>
+    </div>
+</div>

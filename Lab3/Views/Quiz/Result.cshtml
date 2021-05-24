@@ -1,0 +1,25 @@
+﻿@model Backend3.Models.QuizResultViewModel
+@{
+    ViewBag.Title = "Quiz results";
+}
+
+<h2>Quiz results</h2>
+
+<p>
+    <strong>Correct answers: </strong> @Model.CorrectAnswersCount / @Model.IsCorrect.Count
+</p>
+<p>
+    <ol>
+        @for (var i = 0; i < Model.Terms.Count; i++)
+        {
+            if (Model.IsCorrect[i])
+            {
+                <li>@Model.Terms[i].A @Model.Terms[i].Op @Model.Terms[i].B = @Model.Terms[i].Result</li>
+            }
+            else
+            {
+                <li class="text-danger">@Model.Terms[i].A @Model.Terms[i].Op @Model.Terms[i].B = @Model.Terms[i].Result</li>
+            }
+        }
+    </ol>
+</p>

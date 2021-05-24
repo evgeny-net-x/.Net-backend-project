@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-Backend6-4fd1b34e-3551-4869-9119-f7b6184396dc</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20210327151514_ForumCategories.cs" />
+    <Compile Remove="Data\Migrations\20210327151514_ForumCategories.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327152254_Forums.cs" />
+    <Compile Remove="Data\Migrations\20210327152254_Forums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327153342_ForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210327153342_ForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327154802_ForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210327154802_ForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327175257_AddForumCategories.cs" />
+    <Compile Remove="Data\Migrations\20210327175257_AddForumCategories.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327175350_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210327175350_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327175412_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210327175412_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327175625_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210327175625_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327181304_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210327181304_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327181941_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210327181941_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327182034_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210327182034_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210327182211_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210327182211_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404102842_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210404102842_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404103233_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210404103233_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404103435_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210404103435_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404104059_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210404104059_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404104444_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210404104444_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404104557_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210404104557_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404104942_AddForumMessageAttachments1.cs" />
+    <Compile Remove="Data\Migrations\20210404104942_AddForumMessageAttachments1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404105316_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210404105316_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404105343_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210404105343_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404105823_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210404105823_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404110936_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210404110936_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404111841_AddForumCategories.cs" />
+    <Compile Remove="Data\Migrations\20210404111841_AddForumCategories.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404111934_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210404111934_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404112231_AddForumCategories.cs" />
+    <Compile Remove="Data\Migrations\20210404112231_AddForumCategories.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404112404_AddForums.cs" />
+    <Compile Remove="Data\Migrations\20210404112404_AddForums.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404112435_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210404112435_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404112451_AddMessages.cs" />
+    <Compile Remove="Data\Migrations\20210404112451_AddMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210404112529_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210404112529_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406183836_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210406183836_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406184004_AddForumTopics.cs" />
+    <Compile Remove="Data\Migrations\20210406184004_AddForumTopics.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406184058_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210406184058_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406184230_AddForumMessages.cs" />
+    <Compile Remove="Data\Migrations\20210406184230_AddForumMessages.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406184633_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210406184633_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406184705_AddForumMessageAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210406184705_AddForumMessageAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406184923_PostAttachments.cs" />
+    <Compile Remove="Data\Migrations\20210406184923_PostAttachments.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210406185422_AddForumCategories.cs" />
+    <Compile Remove="Data\Migrations\20210406185422_AddForumCategories.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\ForumMessageAttachments\Details.cshtml" />
+    <Content Remove="Views\ForumMessageAttachments\Index.cshtml" />
+    <Content Remove="Views\ForumMessages\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>

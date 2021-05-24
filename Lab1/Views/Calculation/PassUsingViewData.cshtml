@@ -1,0 +1,12 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Pass using ViewData";
+}
+
+<h2>Calculation via ViewData</h2>
+<ul>
+    <li>@ViewData["A"] + @ViewData["B"] = <b>@ViewData["Add"]</b></li>
+    <li>@ViewData["A"] - @ViewData["B"] = <b>@ViewData["Sub"]</b></li>
+    <li>@ViewData["A"] * @ViewData["B"] = <b>@ViewData["Mul"]</b></li>
+    <li>@ViewData["A"] / @ViewData["B"] = <b>@ViewData["Div"]</b></li>
+</ul>

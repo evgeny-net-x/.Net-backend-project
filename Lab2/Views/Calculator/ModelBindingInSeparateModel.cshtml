@@ -1,0 +1,59 @@
+﻿@model Backend2.Models.CalculatorResultModel
+@{
+    ViewBag.Title = "ViewBag binding in separate model";
+}
+
+<h2>Calculator</h2>
+<form class="form-group" asp-action="ModelBindingInSeparateModel">
+     <input name="a" asp-for="a" type="text" value="@ViewBag.A" />
+     <span class="field-validation-error" asp-validation-for="a"></span>
+
+    <select name="op">
+        @if (ViewBag.op == '+')
+        {
+            <option selected value="+">+</option>
+        }
+        else
+        {
+            <option value="+">+</option>
+        }
+
+        @if (ViewBag.op == '-')
+        {
+            <option selected value="-">-</option>
+        }
+        else
+        {
+            <option value="-">-</option>
+        }
+
+        @if (ViewBag.op == '*')
+        {
+            <option selected value="*">*</option>
+        }
+        else
+        {
+            <option value="*">*</option>
+        }
+
+        @if (ViewBag.op == '/')
+        {
+            <option selected value="/">/</option>
+        }
+        else
+        {
+            <option value="/">/</option>
+        }
+    </select>
+
+    
+    <input name="b" asp-for="b" type="text" value="@ViewBag.B" />
+    <span class="field-validation-error" asp-validation-for="b"></span>
+
+
+    <input class="btn btn-primary" value="Calculate" type="submit" />
+    @if (ViewBag.Result != null)
+    {
+        <span> = @ViewBag.Result</span>
+    }
+</form>

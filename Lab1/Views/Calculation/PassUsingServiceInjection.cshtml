@@ -1,0 +1,30 @@
+﻿@using Backend1.Services
+@model dynamic
+@inject IGenerateIntegerService GenerateIntegerService
+@inject ICalculatorService CalculatorService
+@{
+    int range = 10000;
+    var generator = new GenerateIntegerService();
+    var a = generator.GetNumber(-range, range);
+    var b = generator.GetNumber(-range, range);
+    if (b == 0) {
+        b = 1;
+    }
+
+    this.ViewBag.A = a;
+    this.ViewBag.B = b;
+    this.ViewBag.Add = a + b;
+    this.ViewBag.Sub = a - b;
+    this.ViewBag.Mul = a * b;
+    this.ViewBag.Div = a / b;
+
+    ViewBag.Title = "Pass using ServiceInjection";
+}
+
+<h2>Calculation via ViewBag</h2>
+<ul>
+    <li>@ViewBag.A + @ViewBag.B = <b>@ViewBag.Add</b></li>
+    <li>@ViewBag.A - @ViewBag.B = <b>@ViewBag.Sub</b></li>
+    <li>@ViewBag.A * @ViewBag.B = <b>@ViewBag.Mul</b></li>
+    <li>@ViewBag.A / @ViewBag.B = <b>@ViewBag.Div</b></li>
+</ul>

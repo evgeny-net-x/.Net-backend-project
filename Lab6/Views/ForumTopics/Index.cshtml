@@ -1,0 +1,64 @@
+﻿@model Backend6.Models.ForumTopic;
+@using Backend6.Services
+@inject IUserPermissionsService UserPermissions
+@{
+    ViewBag.Title = "Topic";
+}
+
+<h2>@Model.Name</h2>
+
+
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="ForumMessages" asp-action="Create" asp-route-topicId="@Model.Id">Reply</a>
+    }
+    @if (User.IsInRole(ApplicationRoles.Administrators) || UserPermissions.CanEditOrDeleteTopic(this.Model))
+    {
+        <span>
+            | <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            | <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        </span>
+    }
+    | <a asp-controller="Forums" asp-action="Index" asp-route-id="@Model.Forum.Id">Back to @Model.Forum.Name</a>
+</p>
+
+@foreach (var message in Model.Messages)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div>
+                @message.Creator.UserName, @message.Created (edited @message.Modified)
+                @if (User.IsInRole(ApplicationRoles.Administrators) || UserPermissions.CanEditOrDeleteMessage(message))
+                {
+                    <span>
+                        | <a asp-controller="ForumMessages" asp-action="Edit" asp-route-id="@message.Id">Edit</a>
+                        | <a asp-controller="ForumMessages" asp-action="Delete" asp-route-id="@message.Id">Delete</a>
+                        | <a asp-controller="ForumMessageAttachments" asp-action="Create" asp-route-messageId="@message.Id">Attach</a>
+                    </span>
+                }
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="forum-message-text">@message.Text</div>
+            <div class="row">
+                @foreach (var attachment in message.Attachments)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <a href="@attachment.FilePath" target="__blank">
+                                <img src="@attachment.FilePath" alt="@attachment.FileName" />
+                            </a>
+                        </div>
+                        @if (UserPermissions.CanDeleteMessageAttachment(attachment))
+                        {
+                            <div class="caption">
+                                <p><a asp-controller="ForumMessageAttachments" asp-action="Delete" asp-route-id="@attachment.Id" class="btn btn-sm btn-danger">Delete</a></p>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

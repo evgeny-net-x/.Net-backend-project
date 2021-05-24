@@ -1,0 +1,72 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Model binding in parameters";
+}
+
+<h2>Calculator</h2>
+<form class="form-group" asp-action="ModelBindingInParameters">
+    @if (String.IsNullOrEmpty(ViewBag.AError))
+    {
+        <input name="a" type="text" value="@ViewBag.A" />
+    }
+    else
+    {
+        <input class="input-validation-error" name="a" type="text" value="@ViewBag.A" />
+        <span class="field-validation-error">@ViewBag.AError</span>
+    }
+
+    <select name="op">
+        @if (ViewBag.op == '+')
+        {
+            <option selected value="+">+</option>
+        }
+        else
+        {
+            <option value="+">+</option>
+        }
+
+        @if (ViewBag.op == '-')
+        {
+            <option selected value="-">-</option>
+        }
+        else
+        {
+            <option value="-">-</option>
+        }
+
+        @if (ViewBag.op == '*')
+        {
+            <option selected value="*">*</option>
+        }
+        else
+        {
+            <option value="*">*</option>
+        }
+
+        @if (ViewBag.op == '/')
+        {
+            <option selected value="/">/</option>
+        }
+        else
+        {
+            <option value="/">/</option>
+        }
+    </select>
+
+    @if (String.IsNullOrEmpty(ViewBag.BError))
+    {
+        <input name="b" type="text" value="@ViewBag.B" />
+    }
+    else
+    {
+        <input class="input-validation-error" name="b" type="text" value="@ViewBag.B" />
+        <span class="field-validation-error">@ViewBag.BError</span>
+    }
+
+
+    <input class="btn btn-primary" value="Calculate" type="submit" />
+    @if (ViewBag.Result != null)
+    {
+        <span> = @ViewBag.Result</span>
+    }
+</form>

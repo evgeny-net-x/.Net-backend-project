@@ -1,0 +1,92 @@
+﻿@model Backend4.Models.SignUp.SignUpViewModel
+@{
+	ViewBag.Title = "Registration";
+
+	Int32 year = DateTime.Today.Year;
+
+	String[] months = {
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December"
+	};
+}
+
+<h2>Registration</h2>
+
+<form class="form-horizontal" asp-action="SignUp">
+    <div class="form-group">
+        <label class="col-md-2 control-label">First name</label>
+        <div class="col-md-10">
+            <input type="text" asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Last name</label>
+        <div class="col-md-10">
+            <input type="text" asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Birthday</label>
+        <div class="col-md-10 form-inline">
+            <select class="form-control" asp-for="BirthdayDay">
+                <option disabled="disabled">Day</option>
+                @for (int i = 1; i < 32; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+            <select class="form-control" asp-for="BirthdayMonth">
+                <option disabled="disabled">Month</option>
+                @for (int i = 1; i < 13; i++)
+                {
+                    <option value="@i">@months[i - 1]</option>
+                }
+            </select>
+            <select class="form-control" asp-for="BirthdayYear">
+                <option disabled="disabled">Year</option>
+                @for (int i = 0; i < 101; i++)
+                {
+                    int tmp = year - i;
+                    <option value="@tmp">@tmp</option>
+                }
+            </select>
+            <span asp-validation-for="BirthdayDay"></span>
+            <span asp-validation-for="BirthdayMonth"></span>
+            <span asp-validation-for="BirthdayYear"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Gender</label>
+        <div class="col-md-10">
+            <div class="radio">
+                <label>
+                    <input name="Gender" type="radio" asp-for="Gender" value="Male" />
+                    Male
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="Gender" type="radio" asp-for="Gender" value="Female" />
+                    Female
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button type="submit" class="btn btn-primary">Sign up</button>
+        </div>
+    </div>
+</form>
